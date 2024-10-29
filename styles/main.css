@@ -9,11 +9,12 @@ html, body {
 }
 main {
   display: grid;
-  grid-template-columns: 5rem 1fr;
+  grid-template-columns: auto 1fr;
   height: 100%;
   gap: 1rem;
   margin: 0 1rem;
 }
+
 .sidebar {
   background-color: black;
   display: flex;
@@ -23,7 +24,32 @@ main {
   gap: 1rem;
   padding: 10px 0;
   border-radius: 0.5rem;
+  width: 6rem; 
+  transition: width 0.3s; 
 }
+
+.sidebar.open {
+  width: 12rem; 
+}
+
+.toggle-btn {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  color: black;
+  cursor: pointer;
+  font-size: 1.5rem;
+  align-self: flex-end;
+}
+
+.toggle-btn .arrow {
+  display: block;
+}
+
+.sidebar.open .toggle-btn .arrow {
+  transform: rotate(180deg); 
+}
+
 .content {
   border: 2px solid black;
   border-radius: 0.5rem;
